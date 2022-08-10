@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
@@ -10,7 +9,6 @@ void main() {
 
   testWidgets('library, getLocation and send to API', (WidgetTester tester) async {
     await tester.runAsync(() async {
-
       // Build our app and trigger a frame.
       await tester.pumpWidget(const MyApp());
       // Tap the '+' icon and trigger a frame.

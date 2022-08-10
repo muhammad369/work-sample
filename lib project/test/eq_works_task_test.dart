@@ -14,7 +14,7 @@ void main() {
   test('library log()', () async {
     final lib = Library();
     // setup fake dependencies
-    GetIt.I.reset();
+    GetIt.I.unregister<IApiManager>();
     GetIt.I.registerLazySingleton<IApiManager>(() => FakeApiManager());
     //
     await lib.log(LocationEvent(ext: 'empty', lat: 0, lon: 0));
