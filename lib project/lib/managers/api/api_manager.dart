@@ -14,10 +14,10 @@ class ApiManager implements IApiManager {
   Future<bool> sendLocationEvent(LocationEvent locationEvent) async {
     if (!(await _connectivityService.isConnected())) return false;
     //
-    var resp = await _httpService
-        .sendRequest(HttpRequest(method: HttpMethod.post, url: '', data: locationEvent)..addJsonHeaders());
+    var resp = await _httpService.sendRequest(
+        HttpRequest(method: HttpMethod.post, url: 'https://httpbin.org/post', data: locationEvent)..addJsonHeaders());
     //
-    if(resp?.statusCode != 200) return false;
+    if (resp?.statusCode != 200) return false;
     //
     return true;
   }

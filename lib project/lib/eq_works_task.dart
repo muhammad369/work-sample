@@ -6,10 +6,15 @@ import 'package:eq_works_task/services/location/i_location_service.dart';
 import 'package:eq_works_task/setup_dependencies.dart';
 import 'package:get_it/get_it.dart';
 
-/// A Calculator.
+
 class Library {
+
+  bool _setup = false;
+
   bool setup() {
+    if(_setup) return true;
     setupDependencies();
+    _setup = true;
     return true;
   }
 
